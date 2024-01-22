@@ -11,5 +11,5 @@ In code there are few aliases to control the behavior of program:
 - beta - parameter used in score calculation
 - EpisodeCount - a number of episodes the program is going to run
 
-A score is calcualted like: score = alfa*knapsack_value - beta*knapsack_cost
+A score is calcualted like: score = alfa * knapsack_value - beta * knapsack_cost
 
