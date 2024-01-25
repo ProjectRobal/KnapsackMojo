@@ -4,9 +4,9 @@ from collections.vector import DynamicVector,InlinedFixedVector
 from random import randint,random_float64,random_ui64
 from python import Python
 
-alias ItemCount=128
+alias ItemCount=32
 
-alias ItemCountHalf=64
+alias ItemCountHalf=16
 
 alias alfa=10
 
@@ -184,6 +184,8 @@ def show_score_plot(score:DynamicVector[Float64],steps:Int):
 
 
 fn main() raises:
+
+    random.seed()
 
     var item_cost=ItemContainer()
     var item_weight=ItemContainer()
