@@ -4,9 +4,9 @@ from collections.vector import DynamicVector,InlinedFixedVector
 from random import randint,random_float64,random_ui64
 from python import Python
 
-alias ItemCount=16
+alias ItemCount=128
 
-alias ItemCountHalf=8
+alias ItemCountHalf=64
 
 alias alfa=10
 
@@ -227,6 +227,9 @@ fn main() raises:
         
         var childrens:DynamicVector[Backpacks]=DynamicVector[Backpacks]()
 
+        childrens.append(genomes[len(genomes)-1])
+        childrens.append(genomes[len(genomes)-2])
+
         for o in range(2):
             childrens.append(crossover(genomes[len(genomes)-1 - 2*o],genomes[len(genomes)-1 - (2*o + 1)]))
             childrens.append(crossover(genomes[len(genomes)-1 - ( 2*o + 1 )],genomes[len(genomes)-1 - 2*o]))    
@@ -237,7 +240,7 @@ fn main() raises:
         childrens.append(Backpacks(item_weight,item_cost))
         childrens.append(Backpacks(item_weight,item_cost))
 
-        for o in range(len(childrens)):
+        for o in range(2,len(childrens)):
             mutate(childrens[o])
 
         genomes.clear()
